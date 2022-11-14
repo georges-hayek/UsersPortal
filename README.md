@@ -1,1 +1,1 @@
-PTG ADD user to a group for a specific time
+PTG ADD user to a group for a specific timev rere
