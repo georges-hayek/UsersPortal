@@ -17,10 +17,14 @@ def favicon():
 def hello():
    name = request.form.get('name')
    time = request.form.get('time')
+   selectedElement = request.form.get('selectedElement')
+   print(selectedElement)
+
+
 
    if name:
        print('Request for hello page received with name=%s' % name)
-       return render_template('runworkflow.html', name = name, time = time)
+       return render_template('runworkflow.html', name = name, time = time,selectedElement=selectedElement)
    else:
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
