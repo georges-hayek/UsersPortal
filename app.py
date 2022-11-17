@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory,json
 import requests
-
+import os
 
 app = Flask(__name__)
 
@@ -49,6 +49,11 @@ def hello():
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
 
+
+@app.route('/admin', methods=['GET'])
+def admin():
+   print('Request for admin page received')
+   return render_template('admin.html')
 
 if __name__ == '__main__':
    app.run()
