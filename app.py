@@ -49,6 +49,64 @@ def hello():
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
 
+@app.route('/Searchforuser', methods=['POST'])
+def search():
+
+        searchName = request.form.get('searchName')
+        count = 1
+        countfounded = 1
+        founded = False
+
+ 
+        listFordisplayName = []
+        ListParsing = ["mail", "displayName", "userPrincipalName"]
+        
+        dicofDics = {}
+        dicofounded = {}
+        url = "https://prod-31.westeurope.logic.azure.com:443/workflows/0b121fa521f04f0aa6185a49dce36fa5/triggers/request/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Frequest%2Frun&sv=1.0&sig=TJ5tk6JKlHQL4rqpaohEWe_zs1MLyL-nlQX7kCLwdQY"
+
+        payload={}
+        headers = {}
+
+        response = requests.request("POST", url, headers=headers, data=payload)
+        jsonResponse = response.json()
+        jsonResponse = jsonResponse["value"]
+
+
+        for items in jsonResponse:
+           currentElement =  []
+           currentElement.append(items['mail'])
+           currentElement.append(items['displayName'])
+           currentElement.append(items['userPrincipalName'])
+           dicofDics[count] = currentElement
+           count = count +1
+           listFordisplayName.append(currentElement)
+       
+           
+     
+        if(searchName == ''):
+            return dicofDics
+      
+        for item in dicofDics:
+            if(searchName in dicofDics[item][2]):
+                dicofounded[countfounded] = dicofDics[item]
+                countfounded = countfounded + 1 
+                founded = True
+
+          
+        if founded:
+            return dicofounded
+        else:
+       
+            return "user not found"
+
+
+
+
+
+
+
+
 
 @app.route('/admin', methods=['GET'])
 def admin():
