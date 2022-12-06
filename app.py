@@ -6,10 +6,11 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/',methods = ['POST', 'GET'])
 def index():
+   email = request.form.get('email')
    print('Request for index page received')
-   return render_template('index.html')
+   return render_template('index.html', email = email)
 
 @app.route('/favicon.ico')
 def favicon():
@@ -123,8 +124,8 @@ def table():
 
 @app.route('/login', methods=['GET'])
 def login():
-  
    return render_template('login.html')
+   
 
 
 if __name__ == '__main__':
