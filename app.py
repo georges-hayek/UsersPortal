@@ -88,13 +88,14 @@ def search():
             return dicofDics
       
         for item in dicofDics:
-            if(searchName in dicofDics[item][2]):
+            if(searchName in dicofDics[item][2] or searchName in dicofDics[item][1]):
                 dicofounded[countfounded] = dicofDics[item]
                 countfounded = countfounded + 1 
                 founded = True
 
           
         if founded:
+            
             return dicofounded
         else:
        
@@ -112,6 +113,19 @@ def search():
 def admin():
    print('Request for admin page received')
    return render_template('admin.html')
+
+
+@app.route('/table', methods=['GET'])
+def table():
+   print('Request for admin page received')
+   return render_template('table.html')
+
+
+@app.route('/login', methods=['GET'])
+def login():
+  
+   return render_template('login.html')
+
 
 if __name__ == '__main__':
    app.run()
