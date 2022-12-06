@@ -86,7 +86,8 @@ def search():
            
      
         if(searchName == ''):
-            return dicofDics
+            return render_template('Searchforuser.html', dicofDics = dicofDics)
+          
       
         for item in dicofDics:
             if(searchName in dicofDics[item][2] or searchName in dicofDics[item][1]):
@@ -96,8 +97,9 @@ def search():
 
           
         if founded:
+            dicofDics = dicofounded
             
-            return dicofounded
+            return render_template('Searchforuser.html', dicofDics = dicofDics)
         else:
        
             return "user not found"
