@@ -6,11 +6,25 @@ import os
 app = Flask(__name__)
 
 
+
 @app.route('/',methods = ['POST', 'GET'])
 def index():
-   email = request.form.get('email')
+   # email = request.form.get('email')
    print('Request for index page received')
-   return render_template('index.html', email = email)
+   return render_template('index.html')
+
+
+
+
+
+
+
+
+# @app.route('/',methods = ['POST', 'GET'])
+# def index():
+#    email = request.form.get('email')
+#    print('Request for index page received')
+#    return render_template('index.html', email = email)
 
 @app.route('/favicon.ico')
 def favicon():
