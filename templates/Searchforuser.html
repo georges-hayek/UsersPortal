@@ -17,14 +17,24 @@
         <th>Mail</th>
         <th>Display Name</th>
         <th>User Principal Name</th>
+        <th>Send Request</th>
       </tr>
     </thead>
     <tbody>
       {% for item in  dicofDics %}
       <tr>
+        <form method="post" action="{{url_for('admin')}}"> 
         <td>{{dicofDics[item][0]}}</td>
         <td>{{dicofDics[item][1]}}</td>
-        <td>{{dicofDics[item][2]}}</td>
+        <td><input type="text" class="form-control" id="emailRequest" name="emailRequest" value="{{dicofDics[item][2]}}" style="max-width: 256px;" readonly required></td>
+        <td>
+         
+        <div class="search">
+            <button class="btn btn-primary" onMouseOver="this.style.color='blue'" onMouseOut="this.style.color='white'"  style="background-color: #212529; border-color:#212529;">Send</button>
+        </div>
+     
+      </td>
+    </form>
       </tr>
      {% endfor %}
     </tbody>
