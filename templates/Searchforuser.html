@@ -23,7 +23,7 @@
     <tbody>
       {% for item in  dicofDics %}
       <tr>
-        <form method="post" action="{{url_for('admin')}}"> 
+        <form method="post" action="{{url_for('index')}}"> 
         <td>{{dicofDics[item][0]}}</td>
         <td>{{dicofDics[item][1]}}</td>
         <td><input type="text" class="form-control" id="emailRequest" name="emailRequest" value="{{dicofDics[item][2]}}" style="max-width: 256px;" readonly required></td>
