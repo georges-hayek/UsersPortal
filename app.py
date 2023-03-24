@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, redirect, url_for, send_from_
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['POST','GET'])
 def index():
    print('Request for index page received')
    return render_template('index.html')
