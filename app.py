@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
    # email = request.form.get('email')
    print('Request for index page received')
-   return render_template('admin.html')
+   return render_template('hello.html')
 
 
 
