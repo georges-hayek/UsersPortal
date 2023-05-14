@@ -1,268 +1,330 @@
+<!doctype html>
 <head>
-  <title>Procomix USB Time based Access</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Procomix USB Time based Access</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
-
-  <style>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
    
-   @charset "UTF-8";
-
-    .svg-inline--fa {
-      vertical-align: -0.200em;
-    }
-
-    .rounded-social-buttons {
-      text-align: center;
-    }
-
-    .rounded-social-buttons .social-button {
-      display: inline-block;
-      position: relative;
-      cursor: pointer;
-      width: 3.125rem;
-      height: 3.125rem;
-      border: 0.125rem solid transparent;
-      padding: 0;
-      text-decoration: none;
-      text-align: center;
-      color: #fefefe;
-      font-size: 1.5625rem;
-      font-weight: normal;
-      line-height: 2em;
-      border-radius: 1.6875rem;
-      transition: all 0.5s ease;
-      margin-right: 0.25rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
-      -webkit-transform: rotate(360deg);
-          -ms-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-
-    .rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
-      font-size: 25px;
-    }
-
-    .rounded-social-buttons .social-button.facebook {
-      background: #3b5998;
-    }
-
-    .rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
-      color: #3b5998;
-      background: #fefefe;
-      border-color: #3b5998;
-    }
-
-    .rounded-social-buttons .social-button.twitter {
-      background: #55acee;
-    }
-
-    .rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
-      color: #55acee;
-      background: #fefefe;
-      border-color: #55acee;
-    }
-
-    .rounded-social-buttons .social-button.linkedin {
-      background: #007bb5;
-    }
-
-    .rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
-      color: #007bb5;
-      background: #fefefe;
-      border-color: #007bb5;
-    }
-
-    .rounded-social-buttons .social-button.youtube {
-      background: #bb0000;
-    }
-
-    .rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
-      color: #bb0000;
-      background: #fefefe;
-      border-color: #bb0000;
-    }
-
-    .rounded-social-buttons .social-button.instagram {
-      background: #125688;
-    }
-
-    .rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
-      color: #125688;
-      background: #fefefe;
-      border-color: #125688;
-    }
-
-
-    .height{
-      height: 10vh;
-     }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+ 
+    <style>
      
+     @charset "UTF-8";
 
-     .search{
-     position: relative;
-     box-shadow: 0 0 40px rgba(141, 182, 29, .1);
+      .svg-inline--fa {
+        vertical-align: -0.200em;
+      }
+
+      .rounded-social-buttons {
+        text-align: center;
+      }
+
+      .rounded-social-buttons .social-button {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        width: 3.125rem;
+        height: 3.125rem;
+        border: 0.125rem solid transparent;
+        padding: 0;
+        text-decoration: none;
+        text-align: center;
+        color: #fefefe;
+        font-size: 1.5625rem;
+        font-weight: normal;
+        line-height: 2em;
+        border-radius: 1.6875rem;
+        transition: all 0.5s ease;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+        -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+
+      .rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+        font-size: 25px;
+      }
+
+      .rounded-social-buttons .social-button.facebook {
+        background: #3b5998;
+      }
+
+      .rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
+        color: #3b5998;
+        background: #fefefe;
+        border-color: #3b5998;
+      }
+
+      .rounded-social-buttons .social-button.twitter {
+        background: #55acee;
+      }
+
+      .rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+        color: #55acee;
+        background: #fefefe;
+        border-color: #55acee;
+      }
+
+      .rounded-social-buttons .social-button.linkedin {
+        background: #007bb5;
+      }
+
+      .rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+        color: #007bb5;
+        background: #fefefe;
+        border-color: #007bb5;
+      }
+
+      .rounded-social-buttons .social-button.youtube {
+        background: #bb0000;
+      }
+
+      .rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
+        color: #bb0000;
+        background: #fefefe;
+        border-color: #bb0000;
+      }
+
+      .rounded-social-buttons .social-button.instagram {
+        background: #125688;
+      }
+
+      .rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+        color: #125688;
+        background: #fefefe;
+        border-color: #125688;
+      }
+
+
+      .height{
+        height: 10vh;
+       }
        
-     }
 
-     .search input{
+       .search{
+       position: relative;
+       box-shadow: 0 0 40px rgba(141, 182, 29, .1);
+         
+       }
 
-      height: 60px;
-      text-indent: 25px;
-      border: 2px solid #d6d4d4;
+       .search input{
 
-
-     }
-
-
-     .search input:focus{
-
-      box-shadow: none;
-      border: 2px solid #8DB61D;
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4;
 
 
-     }
-
-     .search .fa-search{
-
-      position: absolute;
-      top: 20px;
-      left: 16px;
-
-     }
-
-     .search button{
-
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      height: 50px;
-      width: 110px;
-      background: #8DB61D;
-
-      
+       }
 
 
-     }
+       .search input:focus{
+
+        box-shadow: none;
+        border: 2px solid #8DB61D;
+
+
+       }
+
+       .search .fa-search{
+
+        position: absolute;
+        top: 20px;
+        left: 16px;
+
+       }
+
+       .search button{
+
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 50px;
+        width: 110px;
+        background: #8DB61D;
+
+        
+
+
+       }
 
 
 
-     .header {
-      overflow: hidden;
-      background-color: white;
-      padding: 20px 10px;
-    }
+       .header {
+        overflow: hidden;
+        background-color: white;
+        padding: 20px 10px;
+      }
 
-    .header a {
-      float: left;
-      color: black;
-      text-align: center;
-      padding: 12px;
-      text-decoration: none;
-      font-size: 18px; 
-      line-height: 25px;
-      border-radius: 4px;
-    }
-
-    .header a.logo {
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-    .header a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-
-    .header a.active {
-      background-color: dodgerblue;
-      color: white;
-    }
-
-    .header-right {
-       text-align: center;
-    }
-
-    @media screen and (max-width: 500px) {
       .header a {
-        float: none;
-        display: block;
-        text-align: left;
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px; 
+        line-height: 25px;
+        border-radius: 4px;
       }
-      
+
+      .header a.logo {
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .header a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .header a.active {
+        background-color: dodgerblue;
+        color: white;
+      }
+
       .header-right {
-        float: none;
+         text-align: center;
       }
-    }
 
-
-              /* Create two equal columns that floats next to each other */
-        .column {
-          float: left;
-          width: 30%;
-          padding: 10px;
-      
+      @media screen and (max-width: 500px) {
+        .header a {
+          float: none;
+          display: block;
+          text-align: left;
         }
-
-        /* Clear floats after the columns */
-        .row:after {
-          content: "";
-          display: table;
-          clear: both;
+        
+        .header-right {
+          float: none;
         }
+      }
+
+
+                /* Create two equal columns that floats next to each other */
+          .column {
+            float: left;
+            width: 30%;
+            padding: 10px;
+        
+          }
+
+          /* Clear floats after the columns */
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
 
 
 
 
-  </style>
+    </style>
 
 
 </head>
 <html>
    <body>
+
+
+    <div class="header">
     
-      <div class="header">
-        <div class="row">
-          <div class="column" >
-            <img width="90" height="70" src="data:image/png;base64,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" />
+       
+          <hr> 
+          <div class="row">
+            <div class="column" >
+              <img width="170" height="150" src="https://ptgroup.eu/wp-content/uploads/2021/01/PTG-black-cis-300x212.png" />
+            </div>
+            <div class="column" >
+              <h1 style="color: #8DB61D; margin-top:50px;">USB Time Based Access</h1>
+            </div>
           </div>
-          <div class="column" >
-            <h1 style="color: #8DB61D;">USB Time Based Access</h1>
-          </div>
-        </div>
-      </div>
+    </div>
+
+
      <main>
         <div class="px-4 py-3 my-2 text-center">
             <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='images/azure-icon.svg') }}" alt="Azure Logo" width="192" height="192"/>
             <!-- <img  src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-            <p class="form-label fw-bold fs-5">The user <span style="color:#8DB61D"> {{name}} </span> will be given access for <span style="color:#8DB61D"> {{time}}  {{selectedElement}}</span></p>
-    
-            <a  style="color:#8DB61D; margin-top: 20px;" href="{{ url_for('index') }}" class="btn btn-primary btn-lg px-4 gap-3">Admin Page</a>
+ 
           </div>
-     </main> 
-     <footer style="padding-top: 60px; background-color: #f1f1f1; margin-top: 50px;">
-      <div class="rounded-social-buttons">
-                        <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-       </div>
+     
+        <form method="post" action="{{url_for('search')}}">
+                <div class="container">
 
-       <div class="text-center p-3" style="background-color: #f1f1f1; bottom: 0ch;">
-         © 2023 Copyright:
-         <a class="text-black" href="https://mdbootstrap.com/">ptg.com</a>
-       </div>
-    </footer>     
+                    <div class="row height d-flex justify-content-center align-items-center">
+
+                    <div class="col-md-8">
+
+                        <div class="search">
+                        <i class="fa fa-search"></i>
+                        <input type="text"  id="searchName" name="searchName"  class="form-control" placeholder="Search for an AD user">
+                        <button class="btn btn-primary">Search</button>
+                        </div>
+                        
+                    </div>
+                    
+                    </div>
+                </div>
+        </form>
+
+        <form method="post" action="{{url_for('hello')}}">
+
+
+            <div class="col-md-6 mx-auto text-center">
+                <!-- <p class="lead mb-2">Could you please tell me your name?</p> -->
+                <label for="name" class="form-label fw-bold fs-5">AD user Name</label>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                    <!-- <input type="text" class="form-control" id="name" name="name" value="{{emailRequest}}" style="max-width: 256px;" readonly required>-->
+                    <input type="text" class="form-control" id="name" name="name" value="{{emailRequest}}" style="max-width: 256px;" placeholder="Please Enter a Name"  required>
+                  </div>       
+                <label for="name" class="form-label fw-bold fs-5">Duration</label>  
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                    <input type="text" class="form-control" id="time" name="time" style="max-width: 256px;" placeholder="Please Enter a Duration" required>
+                </div>      
+                    <!-- Example single danger button -->
+                <br>
+                <br>
+
+                    <select class="form-select" name="selectedElement" aria-label="Default select example" style="width: 30%; margin:auto;">
+                      <option selected>Select duration Option</option>
+                      <option value="Minute">Minutes</option>
+                      <option value="hour">hours</option>
+                      <option value="day">days</option>
+                    </select>
+
+                <br>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
+                  <button type="submit" class="btn btn-primary btn-lg px-4 gap-3" style="background-color: #8DB61D;">Approve USB Access</button>
+                </div>            
+
+
+            </div>
+        </form>
+     </main>    
+     
+     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
+
+     <footer style="padding-top: 60px; background-color: #f1f1f1; margin-top: 50px;">
+       <div class="rounded-social-buttons">
+                         <a class="social-button facebook" href="https://www.facebook.com/ProcomixTechnologyGroup" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                         <a class="social-button linkedin" href="https://www.linkedin.com/company/procomix" target="_blank"><i class="fab fa-linkedin"></i></a>
+                         <a class="social-button youtube" href="https://www.youtube.com/channel/UC9V8Y03Zdspdsg-SADKRpQg" target="_blank"><i class="fab fa-youtube"></i></a>
+                         <a class="social-button instagram" href="https://www.instagram.com/procomixtechnologygroup/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="text-center p-3" style="background-color: #f1f1f1;">
+          © 2023 Copyright:
+          <a class="text-black" href="https://mdbootstrap.com/">ptg.com</a>
+        </div>
+     </footer>
+
    </body>
 </html>
