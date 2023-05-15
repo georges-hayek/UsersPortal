@@ -165,7 +165,7 @@ def admin():
 
 
 
-@app.route('/admin', methods=['GET','POST'])
+@app.route('/users', methods=['GET','POST'])
 def usersss():
 
    return render_template('users.html')
