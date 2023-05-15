@@ -166,9 +166,8 @@ def admin():
 
 
 @app.route('/admin', methods=['GET','POST'])
-def admin():
-   emailRequest = request.form.get('emailRequest')
-   print(emailRequest)
+def usersss():
+
    return render_template('users.html')
 
 @app.route('/table', methods=['GET'])
