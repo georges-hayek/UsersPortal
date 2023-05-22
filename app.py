@@ -181,7 +181,21 @@ def login():
    return render_template('login.html')
 
 
-   
+@app.route('/TrackUsers', methods=['GET'])
+def TrackUsers():
+   url = "https://prod-138.westeurope.logic.azure.com:443/workflows/64cd242a3de74203b257a4ba5d25cb10/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=SY27BzE8Rnrpu0Fc1iKdskfBB3VzO3DkUrpHVrbQ3JY"
+
+   payload = {}
+   headers = {}
+
+   response = requests.request("POST", url, headers=headers, data=payload)
+   print( response.json())
+   response = response.json()
+ 
+
+
+
+   return render_template('trackUser.html', response = response)   
 
 
 if __name__ == '__main__':
