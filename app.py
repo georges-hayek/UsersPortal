@@ -15,7 +15,9 @@ def re():
 
 
 
-
+@app.route("/logout")
+def logout():
+    return redirect("portal.azure.com/")
 
 
 
