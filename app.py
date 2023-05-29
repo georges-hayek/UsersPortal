@@ -2,6 +2,8 @@ from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory,json
 import requests
 import os
+import webbrowser
+
 
 app = Flask(__name__)
 
@@ -17,7 +19,7 @@ def re():
 
 @app.route("/logout")
 def logout():
-    return redirect("portal.azure.com/")
+   return redirect("https://portal.azure.com/")
 
 
 
