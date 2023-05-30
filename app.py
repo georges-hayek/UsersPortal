@@ -127,67 +127,67 @@ def search():
 
 
 
-@app.route('/runworkflowuser', methods=['POST'])
-def hellouser():
+# @app.route('/runworkflowuser', methods=['POST'])
+# def hellouser():
 
 
 
-   name = request.form.get('name')
-   time = request.form.get('time')
-   selectedElement = request.form.get('selectedElement')
-   reason = request.form.get('reason')
-   url = "https://prod-116.westeurope.logic.azure.com:443/workflows/b5ec6624f9134978ac2a6674f7250589/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=It5HnPQGqTARWURkkRlJGQGwCOy98VxeUYcShEXXc9k"
+#    name = request.form.get('name')
+#    time = request.form.get('time')
+#    selectedElement = request.form.get('selectedElement')
+#    reason = request.form.get('reason')
+#    url = "https://prod-116.westeurope.logic.azure.com:443/workflows/b5ec6624f9134978ac2a6674f7250589/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=It5HnPQGqTARWURkkRlJGQGwCOy98VxeUYcShEXXc9k"
 
-   payload = json.dumps({
-   "name": name,
-   "time": time,
-   "selectedElement": selectedElement,
-   "reason": reason
-   })
-   headers = {
-   'Content-Type': 'application/json'
-   }
+#    payload = json.dumps({
+#    "name": name,
+#    "time": time,
+#    "selectedElement": selectedElement,
+#    "reason": reason
+#    })
+#    headers = {
+#    'Content-Type': 'application/json'
+#    }
 
-   response = requests.request("POST", url, headers=headers, data=payload)
+#    response = requests.request("POST", url, headers=headers, data=payload)
 
-   print(response.text)
-
-
-
-
-   if name:
-       print('Request for hello page received with name=%s' % name)
-       return render_template('runworkflowuser.html', name = name, time = time,selectedElement=selectedElement)
-   else:
-       print('Request for hello page received with no name or blank name -- redirecting')
-       return redirect(url_for('index'))
+#    print(response.text)
 
 
 
 
-
-@app.route('/admin', methods=['GET','POST'])
-def admin():
-   emailRequest = request.form.get('emailRequest')
-   print(emailRequest)
-   return render_template('admin.html',emailRequest = emailRequest)
-
-
-
-@app.route('/users', methods=['GET','POST'])
-def usersss():
-
-   return render_template('users.html')
-
-@app.route('/table', methods=['GET'])
-def table():
-   print('Request for admin page received')
-   return render_template('table.html')
+#    if name:
+#        print('Request for hello page received with name=%s' % name)
+#        return render_template('runworkflowuser.html', name = name, time = time,selectedElement=selectedElement)
+#    else:
+#        print('Request for hello page received with no name or blank name -- redirecting')
+#        return redirect(url_for('index'))
 
 
-@app.route('/login', methods=['GET'])
-def login():
-   return render_template('login.html')
+
+
+
+# @app.route('/admin', methods=['GET','POST'])
+# def admin():
+#    emailRequest = request.form.get('emailRequest')
+#    print(emailRequest)
+#    return render_template('admin.html',emailRequest = emailRequest)
+
+
+
+# @app.route('/users', methods=['GET','POST'])
+# def usersss():
+
+#    return render_template('users.html')
+
+# @app.route('/table', methods=['GET'])
+# def table():
+#    print('Request for admin page received')
+#    return render_template('table.html')
+
+
+# @app.route('/login', methods=['GET'])
+# def login():
+#    return render_template('login.html')
 
 
 @app.route('/TrackUsers', methods=['GET'])
