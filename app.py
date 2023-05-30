@@ -166,11 +166,11 @@ def search():
 
 
 
-# @app.route('/admin', methods=['GET','POST'])
-# def admin():
-#    emailRequest = request.form.get('emailRequest')
-#    print(emailRequest)
-#    return render_template('admin.html',emailRequest = emailRequest)
+@app.route('/admin', methods=['GET','POST'])
+def admin():
+   emailRequest = request.form.get('emailRequest')
+   print(emailRequest)
+   return render_template('admin.html',emailRequest = emailRequest)
 
 
 
