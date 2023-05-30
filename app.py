@@ -44,12 +44,14 @@ def hello():
    name = request.form.get('name')
    time = request.form.get('time')
    selectedElement = request.form.get('selectedElement')
+   reason = request.fotm.get('reason')
    url = "https://prod-116.westeurope.logic.azure.com:443/workflows/b5ec6624f9134978ac2a6674f7250589/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=It5HnPQGqTARWURkkRlJGQGwCOy98VxeUYcShEXXc9k"
 
    payload = json.dumps({
    "name": name,
    "time": time,
    "selectedElement": selectedElement
+   "reason": reason
    })
    headers = {
    'Content-Type': 'application/json'
