@@ -50,7 +50,7 @@ def hello():
    payload = json.dumps({
    "name": name,
    "time": time,
-   "selectedElement": selectedElement
+   "selectedElement": selectedElement,
    "reason": reason
    })
    headers = {
