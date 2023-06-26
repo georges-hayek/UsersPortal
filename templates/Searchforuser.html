@@ -216,14 +216,14 @@ li a {
 
       <hr>
 
-      <img class="logo" width="220" height="155" src="https://ptgroup.eu/wp-content/uploads/2021/01/PTG-black-cis-300x212.png"  alt="Logo">
+      <img class="logo" width="220" height="155" src="{{ url_for('static', filename='images/WG Logo.png') }}"  alt="Logo">
       <h1 class="title">USB Time Based Access</h1>
       <nav>
         <ul>
        <li><a class="active" href="{{url_for('admin')}}">Home</a></li>
 
   
-   
+    <li ><a href="{{url_for('TrackUsers')}}">Track Users</a></li>
     <li><a href="/logout">Logout</a></li>
         </ul>
       </nav>
